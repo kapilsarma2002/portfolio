@@ -1,6 +1,37 @@
+'use client'
+
 import Link from 'next/link'
+import Typed from 'typed.js'
+import { useRef, useEffect } from 'react'
+
+const company = 'Deloitte'
+
+const textArr = [
+  'This is Kapil Sarma',
+  `I currently work at ${company}`,
+  'I am a Web Dev Enthusiast'
+]
 
 const HomePage = () => {
+
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: textArr,
+      startDelay: 100,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 100,
+      loop: true,
+    });
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+
   return (
     <div className="flex justify-center items-center h-screen w-screen font-sans">
       <div className="flex flex-col justify-between h-[400px] w-[800px] max-w-[1000px] border border-white/20 rounded-lg">
@@ -16,9 +47,14 @@ const HomePage = () => {
           </li>
         </ul>
 
-        <div className="text-white/50 flex flex-col m-4">
-          <div className='text-lg'>Hi There👋</div>
-          <div className='text-2xl text-white/60'>This is <div className='text-5xl'>Kapil Sarma</div></div>
+        <div className="text-white/50 flex flex-col m-4 gap-4">
+          <div className="text-lg">Hi There👋</div>
+          <div>
+            <span
+              className="text-4xl text-white/60 inline-block w-auto"
+              ref={el}
+            ></span>
+          </div>
         </div>
       </div>
     </div>
