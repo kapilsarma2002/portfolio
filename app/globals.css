@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: black;
   color: white;
   margin: 0;
@@ -11,5 +10,5 @@
 }
 
 .typed-cursor {
-  font-size: xx-large;
+  font-size: 3rem;
 }
