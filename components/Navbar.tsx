@@ -4,8 +4,8 @@ import leftarrow from '@/public/leftarrow.svg'
 
 const Navbar = () => {
   return (
-    <div className="bg-black border-b text-lg h-16 w-screen">
-      <div className="flex flex-row h-full w-full justify-between items-center px-48 text-white/40">
+    <div className="bg-black text-lg h-16 w-screen">
+      <div className="flex flex-row h-full w-full justify-between items-center px-48 text-white/60">
         <Link href="/">
           <Image src={leftarrow} alt="left-arrow" color="white" />
         </Link>
