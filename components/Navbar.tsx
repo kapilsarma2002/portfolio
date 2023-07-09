@@ -11,13 +11,13 @@ const Navbar = () => {
         </Link>
         <div className="flex flex-row gap-8">
           <div className="hover:text-white/80 ease-in-out duration-500">
-            <Link href="/contact">Contact</Link>
+            <Link href="/about">About me</Link>
           </div>
           <div className="hover:text-white/80 ease-in-out duration-500">
             <Link href="/project">Projects</Link>
           </div>
           <div className="hover:text-white/80 ease-in-out duration-500">
-            <Link href="/about">About me</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
       </div>
