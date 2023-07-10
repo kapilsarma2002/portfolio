@@ -4,7 +4,6 @@ import Link from "next/link"
 const Contactcard = ({ props }: any) => {
 
   const { title, icon, id, link, iconLink, color }: any = props
-  // console.log(iconLink)
 
   return (
     <div
@@ -12,9 +11,7 @@ const Contactcard = ({ props }: any) => {
     >
       <div className="h-full w-full gap-4 flex flex-col justify-center items-center">
         <div className="text-xl bold">{id}</div>
-        {/* <div>{icon}</div> */}
-        {/* <div>{iconLink}</div> */}
-        <Link href={`${link}`}>
+        <Link href={`${link}`} className="hover:h-120 hover:w-120">
           <Image
             src={`${iconLink}`}
             alt={`${title}`}
@@ -24,7 +21,6 @@ const Contactcard = ({ props }: any) => {
           />
         </Link>
         <div className="text-4xl">{title}</div>
-        {/* <div>{link}</div> */}
       </div>
     </div>
   )

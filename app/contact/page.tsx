@@ -34,6 +34,14 @@ const Profiles = [
     iconLink: '/../public/mail.png',
     color: 'red',
   },
+  {
+    title: 'Instagram',
+    icon: 'Insta',
+    id: '_kapilsarma_',
+    link: 'https://www.instagram.com/_kapilsarma_/?next=%2F',
+    iconLink: '/../public/insta.webp',
+    color: 'pink',
+  },
 ]
 
 const Contact = () => {
