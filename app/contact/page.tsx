@@ -37,7 +37,7 @@ const Profiles = [
   {
     title: 'Instagram',
     icon: 'Insta',
-    id: '_kapilsarma_',
+    id: '@_kapilsarma_',
     link: 'https://www.instagram.com/_kapilsarma_/?next=%2F',
     iconLink: '/../public/insta.webp',
     color: 'pink',

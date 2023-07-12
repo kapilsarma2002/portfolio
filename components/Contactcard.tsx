@@ -7,16 +7,16 @@ const Contactcard = ({ props }: any) => {
 
   return (
     <div
-      className={`h-[400px] w-[800px] rounded-lg border border-zinc-600 ease-in-out duration-500 hover:border-zinc-800 `}
+      className={`h-[400px] w-[800px] rounded-lg border border-zinc-600 ease-in-out duration-1000 hover:border-zinc-800 `}
     >
-      <div className="h-full w-full gap-4 flex flex-col justify-center items-center">
+      <div className="h-full w-full gap-8 flex flex-col justify-center items-center">
         <div className="text-xl bold">{id}</div>
-        <Link href={`${link}`} className="hover:h-120 hover:w-120">
+        <Link href={`${link}`} target="_blank">
           <Image
             src={`${iconLink}`}
             alt={`${title}`}
-            height="100"
-            width="100"
+            height="60"
+            width="80"
             className="rounded-lg"
           />
         </Link>
