@@ -79,6 +79,7 @@ const Project = () => {
   return (
     <div className="h-screen w-screen">
       <Navbar />
+      <button className='h-3 w-4 bg-grey text-white'>Add</button>
       <div className="h-[calc(100%-4rem)] grid grid-cols-2 gap-12 place-items-center mx-40 overflow-y-auto py-10">
         {Projects.map((project) => (
           <ProjectCard key={project.title} props={project} />
