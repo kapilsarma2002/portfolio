@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import ProjectCard from '@/components/ProjectCard'
-import github from '@/public/github.png'
+import github from '@/public/github2.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -66,7 +66,7 @@ const Project = () => {
           <div className="text-xl text-zinc-400">
             For more projects please visit my github page
           </div>
-          <Image src={github} alt="github" height="20" width="20" />
+          <Image src={github} alt="github" height="40" width="40" />
         </Link>
       </div>
     </div>
