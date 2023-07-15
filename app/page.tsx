@@ -47,7 +47,7 @@ const HomePage = () => {
         </ul>
 
         <div className="text-white/50 flex flex-col m-4 gap-4">
-          <div className="text-lg">Hi There👋</div>
+          <div className="text-xl">Hi There👋</div>
           <div>
             <span
               className="text-5xl text-white/80 inline-block w-auto"
