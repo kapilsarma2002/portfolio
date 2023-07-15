@@ -7,7 +7,7 @@ const Profiles = [
     icon: 'Github',
     id: '@kapilsarma2002',
     link: 'https://www.github.com/kapilsarma2002',
-    iconLink: '/@/public/github.png',
+    iconLink: '/github.png',
     color: 'black',
   },
   {
@@ -15,7 +15,7 @@ const Profiles = [
     icon: 'LinkedIn',
     id: 'Kapil Sarma',
     link: 'https://www.linkedin.com/in/kapil-sarma-5bb174184/',
-    iconLink: '/@/public/linkedin.png',
+    iconLink: '/linkedin.png',
     color: 'blue',
   },
   {
@@ -23,7 +23,7 @@ const Profiles = [
     icon: 'Twitter',
     id: '@kapil_sarma_17',
     link: 'https://www.twitter.com/kapil_sarma_17',
-    iconLink: '/@/public/twitter.png',
+    iconLink: '/twitter.png',
     color: 'blue',
   },
   {
@@ -31,7 +31,7 @@ const Profiles = [
     icon: 'Email',
     id: 'sarmakapil1817@gmail.com',
     link: 'mailto:sarmakapil1817@gmail.com',
-    iconLink: '/@/public/mail.png',
+    iconLink: '/mail.png',
     color: 'red',
   },
   {
@@ -39,7 +39,7 @@ const Profiles = [
     icon: 'Insta',
     id: '@_kapilsarma_',
     link: 'https://www.instagram.com/_kapilsarma_/?next=%2F',
-    iconLink: '/@/public/insta.webp',
+    iconLink: '/insta.webp',
     color: 'pink',
   },
 ]
