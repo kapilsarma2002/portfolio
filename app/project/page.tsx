@@ -4,14 +4,6 @@ import github from '@/public/github2.png'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const MainProject = {
-  title: '',
-  link: '',
-  description: '',
-  techstack: '',
-  date: '',
-}
-
 const Projects = [
   {
     title: 'Docs Clone',
@@ -51,13 +43,13 @@ const Project = () => {
   return (
     <div className="h-screen w-screen">
       <Navbar />
-      <div className="h-[calc(100%-4rem)] grid grid-cols-2 gap-24 place-items-center mx-40 overflow-y-auto py-10">
+      <div className="h-[calc(100%-4rem)] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-24 place-items-center overflow-y-auto py-10">
         {Projects.map((project) => (
           <ProjectCard key={project.title} props={project} />
         ))}
       </div>
 
-      <div className="text-2xl w-full ">
+      <div className="text-2xl w-full">
         <Link
           href="https://github.com/kapilsarma2002"
           target="_blank"
