@@ -43,7 +43,7 @@ const Project = () => {
   return (
     <div className="h-screen w-screen">
       <Navbar />
-      <div className="h-[calc(100%-4rem)] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-24 place-items-center overflow-y-auto py-10">
+      <div className="h-[calc(100%-4rem)] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-24 place-items-center overflow-y-auto">
         {Projects.map((project) => (
           <ProjectCard key={project.title} props={project} />
         ))}
