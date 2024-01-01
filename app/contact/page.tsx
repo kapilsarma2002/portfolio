@@ -21,8 +21,8 @@ const Profiles = [
   {
     title: 'Twitter',
     icon: 'Twitter',
-    id: '@kapil_sarma_17',
-    link: 'https://www.twitter.com/kapil_sarma_17',
+    id: '@kapil_sarma_',
+    link: 'https://www.twitter.com/kapil_sarma_',
     iconLink: '/twitter.png',
     color: 'blue',
   },
