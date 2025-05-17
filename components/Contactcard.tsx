@@ -1,29 +1,49 @@
-import Image from "next/image"
-import Link from "next/link"
+'use client'
 
-const Contactcard = ({ props }: any) => {
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
-  const { title, icon, id, link, iconLink, color }: any = props
+interface ContactCardProps {
+  props: {
+    title: string
+    id: string
+    link: string
+    iconLink: string
+  }
+}
+
+const ContactCard = ({ props }: ContactCardProps) => {
+  const { title, id, link, iconLink } = props
 
   return (
-    <div
-      className={`h-[400px] w-[800px] rounded-lg border border-zinc-600 ease-in-out duration-1000 hover:border-zinc-800 `}
+    <motion.div
+      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="group bg-slate-900 rounded-xl p-8 border border-slate-800 hover:border-slate-700 transition-all duration-300"
     >
-      <div className="h-full w-full gap-8 flex flex-col justify-center items-center">
-        <div className="text-xl bold">{id}</div>
-        <Link href={`${link}`} target="_blank">
-          <Image
-            src={`${iconLink}`}
-            alt={`${title}`}
-            height="60"
-            width="80"
-            className="rounded-lg"
-          />
-        </Link>
-        <div className="text-4xl">{title}</div>
-      </div>
-    </div>
+      <Link href={link} target="_blank" className="block">
+        <div className="flex flex-col items-center space-y-4">
+          <div className="relative w-16 h-16">
+            <Image
+              src={iconLink}
+              alt={title}
+              fill
+              className="object-contain rounded-lg group-hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+
+          <h3 className="text-2xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+            {title}
+          </h3>
+
+          <p className="text-slate-400">{id}</p>
+        </div>
+      </Link>
+    </motion.div>
   )
 }
 
-export default Contactcard
+export default ContactCard

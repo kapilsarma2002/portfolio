@@ -1,63 +1,80 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import Navbar from '@/components/Navbar'
 import Link from 'next/link'
-import Typed from 'typed.js'
-import { useRef, useEffect } from 'react'
 
-const company = 'Deloitte'
-
-const textArr = [
-  'This is Kapil Sarma',
-  `I currently work at ${company}`,
-  'I am a Web Dev Enthusiast',
-]
-
-const HomePage = () => {
-  const el = useRef(null)
+export default function HomePage() {
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: textArr,
-      startDelay: 100,
-      typeSpeed: 80,
-      backDelay: 100,
-      backSpeed: 80,
-      loop: true,
-    })
-
-    // Destropying
-    return () => {
-      typed.destroy()
-    }
+    setMounted(true)
   }, [])
 
-  return (
-    <div className="flex justify-center items-center h-screen w-screen">
-      <div className="flex flex-col justify-between h-[400px] w-[800px] max-w-[1000px] border border-white/20 rounded-lg">
-        <ul className="flex flex-row-reverse gap-8 text-lg text-white/40 m-4">
-          <li className="hover:text-white/80 ease-in-out duration-500">
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li className="hover:text-white/80 ease-in-out duration-500">
-            <Link href="/project">Projects</Link>
-          </li>
-          <li className="hover:text-white/80 ease-in-out duration-500">
-            <Link href="/about">About me</Link>
-          </li>
-        </ul>
+  if (!mounted) return null
 
-        <div className="text-white/50 flex flex-col m-4 gap-4">
-          <div className="text-xl">Hi There👋</div>
-          <div>
-            <span
-              className="text-5xl text-white/80 inline-block w-auto"
-              ref={el}
-            ></span>
-          </div>
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+
+      <div className="relative pt-20 px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            >
+              <span className="block">Hi, I&apos;m Kapil Sarma</span>
+              <span className="block text-blue-400 mt-2">
+                Full Stack Developer
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-6 text-lg leading-8 text-gray-300"
+            >
+              I create modern web applications with passion and attention to
+              detail. Currently working at Deloitte, specializing in full-stack
+              development and constantly exploring new technologies.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="mt-10 flex items-center justify-center gap-x-6"
+            >
+              <Link
+                href="/project"
+                className="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 transition-all duration-200"
+              >
+                View My Work
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-semibold leading-6 text-white hover:text-blue-400 transition-all duration-200"
+              >
+                Contact Me <span aria-hidden="true">→</span>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+          <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"></div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
-
-export default HomePage

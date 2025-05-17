@@ -1,68 +1,93 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import ProjectCard from '@/components/ProjectCard'
-import github from '@/public/github2.png'
-import Image from 'next/image'
+import { FiGithub } from 'react-icons/fi'
 import Link from 'next/link'
 
 const Projects = [
   {
-    title: 'Docs Clone',
-    link: 'https://github.com/kapilsarma2002/docs-clone',
-    date: 'May-23',
+    title: 'FrameForge (In Progress)',
+    link: 'https://github.com/kapilsarma2002/FrameForge',
+    date: 'May-25',
     description:
-      'This project is a clone of google docs, it has been built using React, TS and Tailwind CSS and deployed to Vercel. The Skeloton of the page is built using Flexbox. It consists of three components Titlebar, Sidebar and Editor',
-    techstack: 'React, Tailwind, draft-js',
+      'A full-stack application that combines TypeScript and Python for advanced image processing. Features modern UI with seamless backend integration for image manipulation and enhancement.',
+    techstack: 'TypeScript, Python, React, FastAPI',
   },
   {
-    title: 'Post Share',
-    link: 'https://github.com/kapilsarma2002/post-share',
-    date: 'Mar-23',
+    title: 'Travex',
+    link: 'https://github.com/kapilsarma2002/travex',
+    date: 'Feb-25',
     description:
-      'A post sharing app which lets users share their thoughts in posts. This was my first experience using a complete framework like angular for frontend and using .Net as well',
-    techstack: 'Angular, .Net, SQL Server',
+      'A Next.js travel management app with interactive world map visualization. Features dynamic trip plotting, AI-powered experience analysis, and comprehensive travel logging capabilities.',
+    techstack: 'Next.js, Prisma, Clerk, Postgres, Framer Motion, Leaflet',
   },
   {
-    title: 'Blog website',
-    link: 'https://github.com/kapilsarma2002/blog',
-    date: 'Oct-22',
+    title: 'Gita GPT',
+    link: 'https://github.com/kapilsarma2002/gita-gpt',
+    date: 'Dec-24',
     description:
-      "A Simple bloggin website built using nextjs 12 which lets the users write their blogs and also lets the users read others' blogs",
-    techstack: 'Nextjs 12 , React, Chakra UI, Prisma',
+      'An AI-powered application that provides insights from the Bhagavad Gita. Built with modern web technologies and integrating advanced language models for spiritual guidance.',
+    techstack: 'Next.js, TypeScript, Prisma, AI Integration',
   },
   {
-    title: 'Password Manager',
-    link: 'https://github.com/kapilsarma2002/passman-fullst-',
-    date: 'Sept-22',
+    title: 'Saarathi',
+    link: 'https://github.com/kapilsarma2002/saarathi',
+    date: 'Dec-24',
     description:
-      'A password manager built using nextjs 12 which lets users store the passwords for different websites. The passwords are encrypted using bcrypt.',
-    techstack: 'Nextjs 12, React, Chakra UI, Prisma',
-  },
+      'A modern Next.js application focused on providing guidance and assistance based in scriptures. Features a clean, responsive design and seamless user experience.',
+    techstack: 'Next.js, TypeScript, Tailwind CSS',
+  }
 ]
 
-const Project = () => {
+const ProjectPage = () => {
   return (
-    <div className="h-screen w-screen">
+    <div className="min-h-screen bg-slate-950">
       <Navbar />
-      <div className="h-[calc(100%-4rem)] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-24 place-items-center overflow-y-auto">
-        {Projects.map((project) => (
-          <ProjectCard key={project.title} props={project} />
-        ))}
-      </div>
 
-      <div className="text-2xl w-full">
-        <Link
-          href="https://github.com/kapilsarma2002"
-          target="_blank"
-          className="flex flex-row items-center justify-center gap-2 pb-10"
-        >
-          <div className="text-xl text-zinc-400">
-            For more projects please visit my github page
+      <main className="pt-24 px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h1 className="text-4xl font-bold text-white mb-4">
+              Featured Projects
+            </h1>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              A collection of projects that showcase my skills and passion for
+              building modern web applications.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {Projects.map((project, index) => (
+              <ProjectCard key={project.title} props={project} />
+            ))}
           </div>
-          <Image src={github} alt="github" height="40" width="40" />
-        </Link>
-      </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-center"
+          >
+            <Link
+              href="https://github.com/kapilsarma2002"
+              target="_blank"
+              className="inline-flex items-center space-x-2 text-slate-400 hover:text-blue-400 transition-colors"
+            >
+              <FiGithub className="w-5 h-5" />
+              <span>View more projects on GitHub</span>
+            </Link>
+          </motion.div>
+        </div>
+      </main>
     </div>
   )
 }
 
-export default Project
+export default ProjectPage
