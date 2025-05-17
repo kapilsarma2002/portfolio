@@ -8,6 +8,14 @@ import Link from 'next/link'
 
 const Projects = [
   {
+    title: 'Echo Post',
+    link: 'https://github.com/kapilsarma2002/echo-post',
+    date: 'May-25',
+    description:
+      'A powerful social media automation platform that enables users to schedule and publish posts across multiple social platforms simultaneously.',
+    techstack: 'TypeScript, Next.js, Social Media APIs',
+  },
+  {
     title: 'FrameForge (In Progress)',
     link: 'https://github.com/kapilsarma2002/FrameForge',
     date: 'May-25',
@@ -38,7 +46,7 @@ const Projects = [
     description:
       'A modern Next.js application focused on providing guidance and assistance based in scriptures. Features a clean, responsive design and seamless user experience.',
     techstack: 'Next.js, TypeScript, Tailwind CSS',
-  }
+  },
 ]
 
 const ProjectPage = () => {
