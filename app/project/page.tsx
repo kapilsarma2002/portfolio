@@ -8,12 +8,12 @@ import Link from 'next/link'
 
 const Projects = [
   {
-    title: 'Echo Post',
-    link: 'https://github.com/kapilsarma2002/echo-post',
-    date: 'May-25',
+    title: 'LaunchPulse',
+    link: 'https://github.com/kapilsarma2002/launchpulse',
+    date: 'June-25',
     description:
-      'A powerful social media automation platform that enables users to schedule and publish posts across multiple social platforms simultaneously.',
-    techstack: 'TypeScript, Next.js, Social Media APIs',
+      "🚀 LaunchPulse: The ultimate platform for building branded waitlist pages, collecting signups, and managing your app’s early access community—all with beautiful, customizable public pages.",
+    techstack: 'Next.js, React, Prisma, Clerk, Postgres, Framer Motion, Recharts, Tabler icons',
   },
   {
     title: 'FrameForge (In Progress)',
@@ -22,6 +22,14 @@ const Projects = [
     description:
       'A full-stack application that combines TypeScript and Python for advanced image processing. Features modern UI with seamless backend integration for image manipulation and enhancement.',
     techstack: 'TypeScript, Python, React, FastAPI',
+  },
+  {
+    title: 'Echo Post(In Progress)',
+    link: 'https://github.com/kapilsarma2002/echo-post',
+    date: 'May-25',
+    description:
+      'A powerful social media automation platform that enables users to schedule and publish posts across multiple social platforms simultaneously.',
+    techstack: 'TypeScript, Next.js, Social Media APIs',
   },
   {
     title: 'Travex',
