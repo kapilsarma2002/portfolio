@@ -10,12 +10,13 @@ interface ProjectCardProps {
     description: string
     techstack: string
     link: string
+    deployedUrl: string
     date: string
   }
 }
 
 const ProjectCard = ({ props }: ProjectCardProps) => {
-  const { title, description, techstack, link, date } = props
+  const { title, description, techstack, link, deployedUrl, date } = props
 
   return (
     <motion.div
@@ -33,9 +34,20 @@ const ProjectCard = ({ props }: ProjectCardProps) => {
               href={link}
               target="_blank"
               className="text-slate-400 hover:text-blue-400 transition-colors"
+              aria-label="GitHub Repository"
             >
               <FiGithub className="w-5 h-5" />
             </Link>
+            {deployedUrl && deployedUrl !== '' && (
+              <Link
+                href={deployedUrl}
+                target="_blank"
+                className="text-slate-400 hover:text-green-400 transition-colors"
+                aria-label="Live Site"
+              >
+                <FiExternalLink className="w-5 h-5" />
+              </Link>
+            )}
           </div>
         </div>
 
